@@ -142,9 +142,12 @@ h6 {
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
-
 .skills-container {
+  /* background-color: #ff6b6b; */
   margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 .skill-category {
@@ -215,6 +218,10 @@ h6 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-style: preserve-3d;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
 }
 
 .project-card::before {
@@ -250,15 +257,18 @@ h6 {
 }
 
 .project-content {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .project-title {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: var(--light);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
+/* 
 .project-tech {
   display: flex;
   flex-wrap: wrap;
@@ -267,11 +277,26 @@ h6 {
 }
 
 .tech-badge {
-  background-color: rgba(0, 209, 255, 0.1);
+  background-color: rgba(10, 173, 31, 0.1);
   color: var(--accent);
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.8rem;
+} */
+
+.project-tech {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.tech-badge {
+  background-color: rgba(10, 173, 31, 0.1);
+  color: var(--accent);
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  text-align: center;
 }
 
 .project-links {
@@ -280,20 +305,28 @@ h6 {
 }
 
 .project-link {
-  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
-  display: flex;
-  align-items: center;
+  transition: background-color 0.2s ease;
 }
 
-.project-link i {
-  margin-right: 5px;
+.project-links i {
+  font-size: 1rem;
 }
-
 .project-link:hover {
-  color: var(--accent);
+  background-color: #009a2b; /* Slightly darker accent on hover */
+}
+p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
 /* Experience Section */
