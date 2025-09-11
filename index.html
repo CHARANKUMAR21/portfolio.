@@ -767,5 +767,38 @@
         });
       });
     </script>
+    <script>
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault(); // prevent default form submission
+
+        // Get form data
+        const formData = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          subject: document.getElementById("subject").value,
+          message: document.getElementById("message").value,
+        };
+
+        try {
+          // Send data to backend
+          const response = await fetch("http://localhost:5000/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
+
+          const result = await response.json();
+          alert(result.message);
+
+          // Reset form
+          contactForm.reset();
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Something went wrong. Please try again later.");
+        }
+      });
+    </script>
   </body>
 </html>
