@@ -321,7 +321,7 @@ h6 {
   font-size: 1rem;
 }
 .project-link:hover {
-  background-color: #009a2b; /* Slightly darker accent on hover */
+  background-color: #02a330; /* Slightly darker accent on hover */
 }
 p {
   color: var(--text-secondary);
