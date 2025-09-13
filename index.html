@@ -257,7 +257,9 @@
                 Tata Motors (Car Dealership Website)
               </h3>
               <div class="project-tech">
-                <span class="tech-badge">ReactJS</span>
+                <span class="tech-badge">ReactJS</span>                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">JSX</span>
+                <span class="tech-badge">Bootstrap</span>
               </div>
               <p>
                 Developed a React-based Tata Motors Car Dealership Website with
@@ -293,7 +295,7 @@
                 <span class="tech-badge">CSS</span>
                 <span class="tech-badge">JavaScript</span>
                 <span class="tech-badge">Bootstrap</span>
-                <span class="tech-badge">HTML to PDF</span>
+                <!-- <span class="tech-badge">HTML to PDF</span> -->
               </div>
               <p>
                 Developed a web-based Resume Generator to help users create
@@ -783,11 +785,14 @@
 
         try {
           // Send data to backend
-          const response = await fetch("http://localhost:5000/api/contact", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-          });
+          const response = await fetch(
+            "https://portfolio-1-glyf.onrender.com/api/contact",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(formData),
+            }
+          );
 
           const result = await response.json();
           alert(result.message);
